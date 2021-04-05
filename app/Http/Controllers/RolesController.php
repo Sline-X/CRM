@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class RolesController extends Controller
 {
-    public function created()
+    public function create()
     {
         //$role = new Role();
         //$role->name = 'Client';
@@ -47,5 +47,13 @@ class RolesController extends Controller
         //return Role::find(4);
 
         Role::find(4)->delete();
+    }
+    public function show(Role $role)
+    {/*
+        $role = Role::find($roleId);
+        if (empty($role)) {
+            return response([], 404);
+        }*/
+        return response()->json(['data' => $role]);
     }
 }
